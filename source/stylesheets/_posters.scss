@@ -197,8 +197,36 @@ video {
 
 }
 
-.five {
+@include keyframes(screenshot-rise) {
+  0% {
+    opacity: 0;
+    @include transform(translateY(30%));
+  }
 
+  100% {
+    opacity: 1;
+    @include transform(translateY(10%));
+  }
+}
+
+.five {
+  h1 {
+    margin-top: 10vh;
+  }
+
+  h1, h2, p {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+
+  img {
+    @include animation(screenshot-rise 2s ease both);
+    display: block;
+    margin: auto;
+    width: 90%;
+  }
 }
 
 .six {
