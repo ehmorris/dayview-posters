@@ -4,6 +4,9 @@ GEM
     activesupport (3.2.16)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    bourbon (3.1.8)
+      sass (>= 3.2.0)
+      thor
     chunky_png (1.2.9)
     coffee-script (2.2.0)
       coffee-script-source
@@ -74,7 +77,6 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
-    ruby18_source_location (0.2)
     sass (3.2.14)
     sprockets (2.10.1)
       hike (~> 1.2)
@@ -96,7 +98,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
+  coffee-script
+  haml
   middleman (~> 3.1.6)
   middleman-livereload (~> 3.1.0)
-  ruby18_source_location
-  wdm (~> 0.1.0)
+  sass
