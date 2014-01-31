@@ -193,10 +193,6 @@ video {
   }
 }
 
-.four {
-
-}
-
 @include keyframes(screenshot-rise) {
   0% {
     opacity: 0;
@@ -205,13 +201,20 @@ video {
 
   100% {
     opacity: 1;
-    @include transform(translateY(10%));
+    @include transform(translateY(0));
   }
 }
 
-.five {
+img.app {
+  @include animation(screenshot-rise 2s ease both);
+  display: block;
+  margin: auto;
+  width: 90%;
+}
+
+.five, .four {
   h1 {
-    margin-top: 10vh;
+    margin-top: 8vh;
   }
 
   h1, h2, p {
@@ -219,13 +222,6 @@ video {
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-  }
-
-  img {
-    @include animation(screenshot-rise 2s ease both);
-    display: block;
-    margin: auto;
-    width: 90%;
   }
 }
 
