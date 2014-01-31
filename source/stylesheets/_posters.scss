@@ -3,12 +3,47 @@
   }
 }
 
+.map {
+  @include position(absolute, 0px 0px 0px 0px);
+  z-index: -1;
+}
+
 .one {
 
 }
 
 .two {
+  @include linear-gradient(transparent 0%, rgba(0, 0, 0, .15), transparent 100%, $fallback: transparent);
 
+  h1 {
+    color: #fff;
+    font-family: $oswald;
+    font-size: 25vh;
+    font-weight: 800;
+    letter-spacing: 6px;
+    margin: 20vh 0 0 6vh;
+    text-transform: uppercase;
+  }
+
+  blockquote h2, blockquote cite {
+    font-size: 4vh;
+  }
+
+  blockquote {
+    float: right;
+    margin: 0 6vh 0 0;
+    position: relative;
+    width: 40%;
+
+    h2 {
+      margin: 0;
+    }
+
+    h2:before {
+      content: '\201C';
+      @include position(absolute, 0 0 0 -.65em);
+    }
+  }
 }
 
 .three {
