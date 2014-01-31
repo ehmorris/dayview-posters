@@ -1,0 +1,1 @@
+!function(){$(function(){var a,o;return $("#map").length&&(a=L.mapbox.map("map","ehmorris.map-lfrw1qag",{zoomControl:!1}),a.setView([37.8,-122.49],17),a.panBy([25e3,25e3],{easeLinearity:1,duration:200})),$("#map2").length?(o=L.mapbox.map("map2","ehmorris.map-lfrw1qag",{zoomControl:!1}),o.setView([42.3581,-71.0636],15)):void 0})}.call(this);
