@@ -3,13 +3,28 @@
   }
 }
 
-.map {
+.map, video {
   @include position(absolute, 0px 0px 0px 0px);
+  width: 100%;
   z-index: -1;
 }
 
-.one {
+video {
+  object-fit: cover;
+  z-index: 1;
+}
 
+.one {
+  align-items: center;
+  background: #000;
+  display: flex;
+  @include position(absolute, 0px 0px 0px 0px);
+
+  h1, h2 {
+    color: #fff;
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .two {
