@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .poster {
   h1 {
   }
@@ -14,16 +18,63 @@ video {
   z-index: 1;
 }
 
+@include keyframes(slide-images) {
+  0% {
+    @include transform(translateX(0) translateY(0))
+  }
+
+  100% {
+    @include transform(translateX(-100%) translateY(-50%))
+  }
+}
+
 .one {
-  align-items: center;
   background: #000;
-  display: flex;
   @include position(absolute, 0px 0px 0px 0px);
+
+  img {
+    @include animation(slide-images 120s linear both);
+    height: 130vh;
+    @include position(absolute, 0px 0 0 0px);
+
+    &:nth-of-type(2) {
+      left: 100vh;
+    }
+
+    &:nth-of-type(3) {
+      left: 200vh;
+    }
+  }
 
   h1, h2 {
     color: #fff;
     position: relative;
     z-index: 2;
+  }
+
+  h1 {
+    color: white;
+    display: inline-block;
+    font-family: $merriweather;
+    font-size: 4vh;
+    font-weight: 800;
+    margin: 10vh 0 0 20vw;
+    position: relative;
+
+    &:after {
+      border-right: 4px solid white;
+      content: '';
+      display: block;
+      height: 70vh;
+      @include position(absolute, 0px -1em 0 0);
+    }
+  }
+
+  h2 {
+    font-size: 4vh;
+    margin: 31vh 0 0 29vw;
+    width: 45%;
+    z-index: 3;
   }
 }
 
