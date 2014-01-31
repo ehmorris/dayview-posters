@@ -92,29 +92,105 @@ video {
     text-transform: uppercase;
   }
 
-  blockquote h2, blockquote cite {
-    font-size: 4vh;
-  }
-
-  blockquote {
+  h2 {
     float: right;
+    font-size: 3vh;
     margin: 0 6vh 0 0;
     position: relative;
-    width: 40%;
+    width: 42%;
+  }
+}
 
-    h2 {
-      margin: 0;
-    }
+@include keyframes(fade-in-out) {
+  0% {
+    display: none;
+    opacity: 0;
+  }
 
-    h2:before {
-      content: '\201C';
-      @include position(absolute, 0 0 0 -.65em);
-    }
+  1% {
+    display: block;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  99% {
+    display: block;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@include keyframes(fade-in) {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 .three {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  margin: auto;
+  width: 90%;
 
+  > h1 {
+    @include animation(fade-in 4s ease both);
+    margin: 0;
+    flex: 100 0px;
+  }
+
+  > blockquote {
+    @include animation(fade-in-out 4s ease both);
+    @include animation-delay(3s);
+    flex: 100 0px;
+  }
+
+  > h2 {
+    @include animation(fade-in 4s ease both);
+    @include animation-delay(7s);
+    flex: 100 0px;
+  }
+
+  h1, blockquote, h2, cite {
+    color: white;
+    display: block;
+    font-size: 3vh;
+    width: 100%;
+  }
+
+  blockquote {
+    margin: 0;
+    position: relative;
+
+    h2 {
+      margin: 0;
+    }
+  }
 }
 
 .four {
